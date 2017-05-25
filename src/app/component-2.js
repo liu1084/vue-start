@@ -22,6 +22,15 @@ var vm = new Vue({
 	components: {
 		'todo-item': TodoItem //注册一个本地组件
 	},
+	/**
+	 * vue的生命周期
+	 * beforeCreate: Called synchronously after the instance has just been initialized, before data observation and event/watcher setup.
+	 * created: Called synchronously after the instance is created. At this stage, the instance has finished processing the options which means the following have been set up: data observation, computed properties, methods, watch/event callbacks. However, the mounting phase has not been started, and the $el property will not be available yet.
+	 * beforeMount: Called right before the mounting begins: the render function is about to be called for the first time.
+	 * mounted: Called after the instance has just been mounted where el is replaced by the newly created vm.$el.
+	 * beforeUpdate: Called when the data changes, before the virtual DOM is re-rendered and patched.
+	 * updated: Called after a data change causes the virtual DOM to be re-rendered and patched.
+	 */
 	beforeCreate: function(){
 
 	},
