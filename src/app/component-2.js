@@ -22,9 +22,18 @@ var vm = new Vue({
 	components: {
 		'todo-item': TodoItem //注册一个本地组件
 	},
+	beforeCreate: function(){
+
+	},
+	created: function(){},
 	beforeMount: function(){
 		console.log('before mount 1');
-	}
+	},
+	mounted: function(){},
+	beforeUpdate: function(){},
+	updated: function(){},
+	beforeDestroy: function(){},
+	destroyed: function(){}
 });
 
 vm.beforeMount = function(){
