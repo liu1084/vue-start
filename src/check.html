@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<div id="app"></div>
+<script>
+	function getReq() {
+		var req = false;
+		if(window.XMLHttpRequest) {
+			try {
+				req = new XMLHttpRequest();
+			} catch(e) {
+				req = false;
+			}
+		} else if(window.ActiveXObject) {
+			try {
+				req = new ActiveXObject("Microsoft.XMLHTTP");
+			} catch(e) {
+				req = false;
+			}
+		}
+		if (! req) {
+			alert("Your browser does not support XMLHttpRequest.");
+		}
+		return req;
+	}
+
+	var check = function(url){
+		var req = false;
+		if(window.XMLHttpRequest) {
+			try {
+				req = new XMLHttpRequest();
+			} catch(e) {
+				req = false;
+			}
+		} else if(window.ActiveXObject) {
+			try {
+				req = new ActiveXObject("Microsoft.XMLHTTP");
+			} catch(e) {
+				req = false;
+			}
+		}
+		if (! req) {
+			alert("Your browser does not support XMLHttpRequest.");
+		}
+
+		req.open("GET", url, false);
+		//req.overrideMimeType('text/plain; charset=x-user-defined');
+		req.send();
+		if(req.readyState==4&&req.status==200){
+			console.log(req.response.length);
+		}
+	};
+
+	check('http://www.sdewt.com/');
+</script>
+
+<button onclick="check(url);">check</button>
+</body>
+</html>
